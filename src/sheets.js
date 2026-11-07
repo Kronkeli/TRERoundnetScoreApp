@@ -45,7 +45,7 @@ export function rowsToPlayers(rows, nameHeader, pointsHeader) {
 
 export function hasGoogleConfig() {
   return Boolean(
-    process.env.GOOGLE_SHEET_ID && process.env.GOOGLE_SERVICE_ACCOUNT_FILE
+    process.env.HOSTLOCALLY
   );
 }
 
