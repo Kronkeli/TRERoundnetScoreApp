@@ -50,10 +50,14 @@ export function hasGoogleConfig() {
 }
 
 async function readSheetRows() {
-  const auth = new google.auth.GoogleAuth({
-    keyFile: process.env.GOOGLE_SERVICE_ACCOUNT_FILE,
-    scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
-  });
+  const auth = process.env.HOSTLOCALLY == "TRUE" ? 
+    new google.auth.GoogleAuth({
+      keyFile: process.env.GOOGLE_SERVICE_ACCOUNT_FILE,
+      scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+    })
+    : new google.auth.GoogleAuth({
+      scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+    }); 
   const sheets = google.sheets({ version: "v4", auth });
   const tab = process.env.GOOGLE_SHEET_TAB || "current";
   const range = `'${tab.replace(/'/g, "''")}'!A1:D200`;
