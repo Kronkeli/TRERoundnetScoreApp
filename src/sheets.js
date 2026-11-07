@@ -45,12 +45,18 @@ export function rowsToPlayers(rows, nameHeader, pointsHeader) {
 
 export function hasGoogleConfig() {
   return Boolean(
+    process.env.ISDATASOURCEGOOGLE
+  );
+}
+
+export function isHostedLocally() {
+  return Boolean(
     process.env.HOSTLOCALLY
   );
 }
 
 async function readSheetRows() {
-  const auth = process.env.HOSTLOCALLY == "TRUE" ? 
+  const auth = isHostedLocally() ? 
     new google.auth.GoogleAuth({
       keyFile: process.env.GOOGLE_SERVICE_ACCOUNT_FILE,
       scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
