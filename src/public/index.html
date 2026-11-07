@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roundnet groups</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="eyebrow">Roundnet Tampere</p>
+        <h1>Weekly groups</h1>
+      </div>
+      <p id="sourceBadge" class="badge">Skill source: …</p>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-head">
+          <h2>Upcoming sessions</h2>
+          <button type="button" id="reloadEvents" class="ghost">Refresh</button>
+        </div>
+        <p id="eventsStatus" class="status">Loading events…</p>
+        <div id="events" class="event-list"></div>
+      </section>
+
+      <section id="groupsSection" hidden>
+        <div class="section-head">
+          <h2 id="groupsTitle">Groups</h2>
+          <button type="button" id="copyGroups" class="ghost">Copy groups</button>
+        </div>
+        <p id="groupsMeta" class="status"></p>
+        <p id="groupsWarning" class="warning" hidden></p>
+        <div id="unmatched" hidden></div>
+        <div id="groups" class="group-grid"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

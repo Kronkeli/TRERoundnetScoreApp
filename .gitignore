@@ -1,0 +1,8 @@
+node_modules/
+.env
+web_credentials.json
+*credentials*.json
+service-account.json
+nh-*.html
+.DS_Store
+secrets/

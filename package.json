@@ -1,0 +1,20 @@
+{
+  "name": "tre-roundnet-score-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test src/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "googleapis": "^164.1.0"
+  }
+}
